@@ -64,6 +64,7 @@ public class Auction
             }
             else {
                 // Report which bid is higher.
+
                 System.out.println("Lot number: " + lotNumber +
                                    " already has a bid of: " +
                                    selectedLot.getHighestBid().getValue());
@@ -97,6 +98,22 @@ public class Auction
             System.out.println("Lot number: " + lotNumber +
                                " does not exist.");
             return null;
+        }
+    }
+    /**
+     * Ejercicio 0060
+     */
+    public void close() 
+    {
+        for(Lot element : lots) {
+            System.out.println(element.toString());
+            if(element.getHighestBid() == null) {
+                System.out.println("No hay pujas");
+            }
+            else {
+                System.out.println("Nombre de la persona con la mayor puja: " + element.getHighestBid().getBidder().getName());
+                System.out.println("Valor de la puja: " + element.getHighestBid().getValue());
+            }
         }
     }
 }
